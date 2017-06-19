@@ -1822,10 +1822,10 @@ def extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count):
     leftPart = ROI[:, 0:(col_size + (deltaAmpliacion * 2 - 1))]
     rightPart = ROI[:, -(col_size + (deltaAmpliacion * 2 - 1)):]
 
-    plt.subplot(2, 2, 1), plt.imshow(ROI, 'gray')
-    plt.subplot(2, 2, 3), plt.imshow(leftPart, 'gray')
-    plt.subplot(2, 2, 4), plt.imshow(rightPart, 'gray')
-    plt.show()
+    # plt.subplot(2, 2, 1), plt.imshow(ROI, 'gray')
+    # plt.subplot(2, 2, 3), plt.imshow(leftPart, 'gray')
+    # plt.subplot(2, 2, 4), plt.imshow(rightPart, 'gray')
+    # plt.show()
 
     top_left_L, bottom_right_L = getBestRectangle(leftPart, default_th=0.5, low_ratio=0.4,upper_ratio=0.6, to_debug=False)
     delta_L = (bottom_right_L[0] - top_left_L[0], bottom_right_L[1] - top_left_L[1])
@@ -1845,15 +1845,15 @@ def extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count):
     possibleBestLeft = ROI[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
     possibleBestRight = ROI[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
 
-    plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
-
-    plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
-    plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
-    plt.subplot(1, 8, 5), plt.imshow(bestLeft), plt.title('bestLeft')
-    plt.subplot(1, 8, 6), plt.imshow(possibleBestLeft), plt.title('possibleBestLeft')
-    plt.subplot(1, 8, 7), plt.imshow(bestRight), plt.title('bestRight')
-    plt.subplot(1, 8, 8), plt.imshow(possibleBestRight), plt.title('possbielBestRight')
-    plt.show()
+    # plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
+	#
+    # plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
+    # plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
+    # plt.subplot(1, 8, 5), plt.imshow(bestLeft), plt.title('bestLeft')
+    # plt.subplot(1, 8, 6), plt.imshow(possibleBestLeft), plt.title('possibleBestLeft')
+    # plt.subplot(1, 8, 7), plt.imshow(bestRight), plt.title('bestRight')
+    # plt.subplot(1, 8, 8), plt.imshow(possibleBestRight), plt.title('possbielBestRight')
+    # plt.show()
 
     pointA = (top_left_L[1], top_left_L[0])
     pointY = (bottom_right_R[1], bottom_right_R[0])
@@ -1904,9 +1904,9 @@ def extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count):
         singleLetterFiltered = filterSingleCharacter_new(letter, rectangle_parameters=[0.5,0.4,0.6])
         filteredLetters.append(singleLetterFiltered)
 
-        if singleLetterFiltered != None:
-           plt.imshow(singleLetterFiltered)
-           plt.show()
+        # if singleLetterFiltered != None:
+        #    plt.imshow(singleLetterFiltered)
+        #    plt.show()
 
     return filteredLetters
 

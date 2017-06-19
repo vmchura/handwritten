@@ -206,9 +206,9 @@ def getSquares_newAlgorithm(image_original):
     cY = cY[1], cY[0]
     centers = [cA, cB, cX, cY]
     centers = sortSquareCenters(centers)
-    print(centers)
-    plt.imshow(image_original, 'gray')
-    plt.show()
+    # print(centers)
+    # plt.imshow(image_original, 'gray')
+    # plt.show()
     return centers,k
 
 
