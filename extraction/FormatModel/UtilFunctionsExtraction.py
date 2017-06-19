@@ -564,11 +564,17 @@ def getBestRectangle_big(region, ratio_cols_over_rows):
 # recibe como parametro una region en escala de grises
 def getBestRectangle(region, default_th=0.5, low_ratio = 0.75, upper_ratio = 0.95, to_debug=False):
 
+    # if default_th < 0.24:
+	#
+    #     to_debug = True
 
     img = cv2.medianBlur(region, 1)
     to_find_border = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 5, 1)
 
     if to_debug:
+        print('default_th: ',default_th)
+        print('low_ratio:', low_ratio)
+        print('upper_ratio:', upper_ratio)
         plt.subplot(1, 3, 1), plt.imshow(region,'gray'), plt.title('region')
         plt.subplot(1, 3, 2), plt.imshow(img,'gray'), plt.title('img')
         plt.subplot(1, 3, 3), plt.imshow(to_find_border,'gray'), plt.title('to_find_border')
@@ -672,7 +678,7 @@ def getBestRectangle(region, default_th=0.5, low_ratio = 0.75, upper_ratio = 0.9
     pi = (bestPos[1], bestPos[0])
 
     if pi[0] == -1:
-        return getBestRectangle(region, default_th / 2.0)
+        return getBestRectangle(region, default_th / 2.0, low_ratio=low_ratio, upper_ratio=upper_ratio)
 
         # print('SS:', len(maxCols), len(maxRows), ' calculated: ', cb.calculated)
         #
@@ -1816,10 +1822,10 @@ def extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count):
     leftPart = ROI[:, 0:(col_size + (deltaAmpliacion * 2 - 1))]
     rightPart = ROI[:, -(col_size + (deltaAmpliacion * 2 - 1)):]
 
-    # plt.subplot(2, 2, 1), plt.imshow(ROI, 'gray')
-    # plt.subplot(2, 2, 3), plt.imshow(leftPart, 'gray')
-    # plt.subplot(2, 2, 4), plt.imshow(rightPart, 'gray')
-    # plt.show()
+    plt.subplot(2, 2, 1), plt.imshow(ROI, 'gray')
+    plt.subplot(2, 2, 3), plt.imshow(leftPart, 'gray')
+    plt.subplot(2, 2, 4), plt.imshow(rightPart, 'gray')
+    plt.show()
 
     top_left_L, bottom_right_L = getBestRectangle(leftPart, default_th=0.5, low_ratio=0.4,upper_ratio=0.6, to_debug=False)
     delta_L = (bottom_right_L[0] - top_left_L[0], bottom_right_L[1] - top_left_L[1])
@@ -1839,15 +1845,15 @@ def extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count):
     possibleBestLeft = ROI[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
     possibleBestRight = ROI[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
 
-    # plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
-    #
-    # plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
-    # plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
-    # plt.subplot(1, 8, 5), plt.imshow(bestLeft), plt.title('bestLeft')
-    # plt.subplot(1, 8, 6), plt.imshow(possibleBestLeft), plt.title('possibleBestLeft')
-    # plt.subplot(1, 8, 7), plt.imshow(bestRight), plt.title('bestRight')
-    # plt.subplot(1, 8, 8), plt.imshow(possibleBestRight), plt.title('possbielBestRight')
-    # plt.show()
+    plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
+
+    plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
+    plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
+    plt.subplot(1, 8, 5), plt.imshow(bestLeft), plt.title('bestLeft')
+    plt.subplot(1, 8, 6), plt.imshow(possibleBestLeft), plt.title('possibleBestLeft')
+    plt.subplot(1, 8, 7), plt.imshow(bestRight), plt.title('bestRight')
+    plt.subplot(1, 8, 8), plt.imshow(possibleBestRight), plt.title('possbielBestRight')
+    plt.show()
 
     pointA = (top_left_L[1], top_left_L[0])
     pointY = (bottom_right_R[1], bottom_right_R[0])
@@ -1898,9 +1904,9 @@ def extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count):
         singleLetterFiltered = filterSingleCharacter_new(letter, rectangle_parameters=[0.5,0.4,0.6])
         filteredLetters.append(singleLetterFiltered)
 
-        # if singleLetterFiltered != None:
-        #    plt.imshow(singleLetterFiltered)
-        #    plt.show()
+        if singleLetterFiltered != None:
+           plt.imshow(singleLetterFiltered)
+           plt.show()
 
     return filteredLetters
 
@@ -1909,7 +1915,7 @@ def extractCharacters(img, TL, BR, count):
     numRows = (BR[0] - TL[0]) / count
     numCols = BR[1] - TL[1]
     # print('finding ratio nr/nc : ' + str(numRows)+' / ' + str(numCols)+'  divided by '+ str(count))
-    template = findApropiateTemplate(numRows / numCols)
+    # template = findApropiateTemplate(numRows / numCols)
 
     deltaAmpliacion = 5
 
@@ -1918,22 +1924,24 @@ def extractCharacters(img, TL, BR, count):
 
     # plt.imshow(ROI,'gray')
     # plt.show()
+    col_size = 35
+    col_size = min(col_size, ROI.shape[1] - (deltaAmpliacion * 2 - 1) - 1)
 
     # TODO revisar ampliacion de imagen si es necesario
 
 
-    leftPart = ROI[:, 0:(template.shape[1] + (deltaAmpliacion * 2 - 1))]
-    rightPart = ROI[:, -(template.shape[1] + (deltaAmpliacion * 2 - 1)):]
+    leftPart = ROI[:, 0:(col_size + (deltaAmpliacion * 2 - 1))]
+    rightPart = ROI[:, -(col_size + (deltaAmpliacion * 2 - 1)):]
 
     # plt.subplot(2, 2, 1), plt.imshow(ROI, 'gray')
     # plt.subplot(2, 2, 3), plt.imshow(leftPart, 'gray')
     # plt.subplot(2, 2, 4), plt.imshow(rightPart, 'gray')
     # plt.show()
 
-    top_left_L, bottom_right_L = getBestRectangle(leftPart)
+    top_left_L, bottom_right_L = getBestRectangle(leftPart,default_th=0.5, low_ratio=0.75, upper_ratio=1.1)
     delta_L = (bottom_right_L[0] - top_left_L[0], bottom_right_L[1] - top_left_L[1])
 
-    top_left_R, bottom_right_R = getBestRectangle(rightPart)
+    top_left_R, bottom_right_R = getBestRectangle(rightPart,default_th=0.5, low_ratio=0.75, upper_ratio=1.1)
     delta_R = (bottom_right_R[0] - top_left_R[0], bottom_right_R[1] - top_left_R[1])
 
     bestLeft = leftPart[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
@@ -1942,14 +1950,14 @@ def extractCharacters(img, TL, BR, count):
     # print('If shape: ', If.shape)
     # print('template shape: ', template.shape)
     # print('current top_left_R', top_left_R)
-    top_left_R = (top_left_R[0] + ROI.shape[1] - (template.shape[1] + ((deltaAmpliacion * 2 - 1))), top_left_R[1])
+    top_left_R = (top_left_R[0] + ROI.shape[1] - (col_size + ((deltaAmpliacion * 2 - 1))), top_left_R[1])
     bottom_right_R = (top_left_R[0] + delta_R[0], top_left_R[1] + delta_R[1])
     # print('after top_left_R', top_left_R)
     possibleBestLeft = ROI[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
     possibleBestRight = ROI[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
 
     # plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
-    # plt.subplot(1, 8, 2), plt.imshow(template), plt.title('template')
+    # # plt.subplot(1, 8, 2), plt.imshow(template), plt.title('template')
     # plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
     # plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
     # plt.subplot(1, 8, 5), plt.imshow(bestLeft), plt.title('bestLeft')
@@ -2004,7 +2012,7 @@ def extractCharacters(img, TL, BR, count):
     filteredLetters = []
 
     for letter in letters:
-        singleLetterFiltered = filterSingleCharacter_new(letter)
+        singleLetterFiltered = filterSingleCharacter_new(letter,rectangle_parameters=[0.5,0.75,1.1])
         filteredLetters.append(singleLetterFiltered)
         #
         # if singleLetterFiltered != None:
