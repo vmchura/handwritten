@@ -153,6 +153,13 @@ if __name__ == '__main__':
         timer_detector.startTimer(1)
 
         img = cv2.imread(imgPath[i], 0)
+        rows, cols = img.shape
+
+        if rows < cols:
+            image = cv2.transpose(img)
+
+        img = cv2.resize(img, (1240, 1754))
+
         img = PageDetector.enderezarImagen(img)
         page = PageDetector.detectPage(img)
 

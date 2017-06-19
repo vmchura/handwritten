@@ -43,7 +43,13 @@ def loadValue(dict_current):
             return ImageCategoricLabelsTipoVia(dict_current['position'],1)
         if dict_current['nameSingleParser'] == 'parserCategoricLabelsSiNo':
             return ImageCategoricLabelsSiNo(dict_current['position'],1)
+        if dict_current['nameSingleParser'] == 'parserCategoricSquareS100':
+            return ImageCategoricSquareS100(dict_current['position'],1)
 
+    elif dict_current['nameParser'] == 'parserImage2ArrayChar_DNI_S100':
+        return ArrayImageNumber_DNI_S100(dict_current['position'],dict_current['countItems'])
+    elif dict_current['nameParser'] == 'parserImage2ArrayChar_FECHA_NACIMIENTO_S100':
+        return ArrayImageNumber_FECHA_NACIMIENTO_S100(dict_current['position'],dict_current['countItems'])
     return None
 
 def loadCategory(dict_current):

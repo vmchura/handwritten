@@ -6,9 +6,10 @@ from extraction.FormatModel.UtilFunctionsLoadTemplates import loadCategory
 import pickle
 import cv2
 import json
-pagina = '3'
-fileToEdit = 'pagina'+pagina+'.json'
-image = cv2.imread('../../resources/pag'+pagina+'_1_Template.png')
+pagina = '2'
+fileToEdit = 'paginaNew'+pagina+'.json'
+image = cv2.imread('../../resources/pag'+pagina+'_Template_to_positions.png')
+
 
 def click_and_crop(event, x, y, flags, param):
     # grab references to the global variables
@@ -60,7 +61,9 @@ if __name__ == '__main__':
                 cv2.putText(image, str(label), category[1].value.position[0], fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                             fontScale=1, color=(0, 0, 255), thickness=2)
             print(label, '][', category[0])
-        cv2.imshow("image", image)
+        rows_to_display = image.shape[0] // 2
+
+        cv2.imshow("image", image[rows_to_display:,:])
 
         cv2.waitKey(400)
         x = int(raw_input('>=0 para continuar, -1 para terminar'))
@@ -75,6 +78,12 @@ if __name__ == '__main__':
             # display the image and wait for a keypress
             image = img_clone.copy()
             position = cat[1].value.position
+            if position[0][1] >= position[1][1]:
+                position[0] = position[0][0], position[1][1]-1
+
+            if position[0][0] >= position[1][0]:
+                position[0] = position[1][0]-1, position[0][1]
+
             ROI = image[position[0][1]:position[1][1], position[0][0]:position[1][0]]
             cv2.imshow("ROI", ROI)
 
@@ -83,7 +92,7 @@ if __name__ == '__main__':
                     category[1].value.drawPosition(image)
                     cv2.putText(image, str(label), category[1].value.position[0], fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                                 fontScale=1, color=(0, 0, 255), thickness=2)
-            cv2.imshow("image", image)
+            cv2.imshow("image", image[rows_to_display:,:])
 
             key = cv2.waitKey(1) & 0xFF
 

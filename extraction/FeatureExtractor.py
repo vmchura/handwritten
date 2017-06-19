@@ -46,6 +46,10 @@ def extractPageData(img, pageNumber, baseL = None, page_name = 'pagina'):
     Returns:
         __
     """
+    # If = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 5, 2)
+    # If = cv2.bitwise_not(If)
+    # # If = cv2.dilate(If, cv2.getStructuringElement(cv2.MORPH_RECT,(3,3)))
+    # cv2.imwrite('resources/pag1_Template_to_positions.png',If)
     print('Extracting for page: ', page_name)
     if(pageNumber == 3):
         return extractPageData_number3(img, baseL, page_name)
@@ -71,7 +75,7 @@ def extractPageData_numberX(img_original, baseL, str_number, page_name = 'image_
     Returns:
         __
     """
-    paginaBase = cv2.imread('resources/pag'+str_number+'_1_Template.png', 0)
+    paginaBase = cv2.imread('resources/pag'+str_number+'_Template.png', 0)
     img = cv2.resize(img_original, (paginaBase.shape[1], paginaBase.shape[0]))
     ret3, If = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
@@ -89,7 +93,7 @@ def extractPageData_numberX(img_original, baseL, str_number, page_name = 'image_
     edgesToDebug = If.copy()
     edgesToDebug[edgesToDebug > 0] = 125
 
-    with open('extraction/FormatModel/pagina'+str_number+'.json', 'r') as input:
+    with open('extraction/FormatModel/paginaNew'+str_number+'.json', 'r') as input:
 
         dict_Page1 = json.load(input)
         Page = loadCategory(dict_Page1)
@@ -101,14 +105,15 @@ def extractPageData_numberX(img_original, baseL, str_number, page_name = 'image_
 
     R = Page.getAllWithValue()
 
-    Page.calcCuadro(img)
-    cb = UtilFunctionsExtraction.CuadroBuffer()
-    cb.calc()
+    # Page.calcCuadro(img)
+    # cb = UtilFunctionsExtraction.CuadroBuffer()
+    # cb.calc()
 
 
     # Page.parse()
 
-    print('calculated values:', cb.A_predicted, cb.B_predicted)
+    # print('calculated values:', cb.A_predicted, cb.B_predicted)
+
     for category in R:
         if category[1].value is not None:
             print('Parsing category: ',category[0])

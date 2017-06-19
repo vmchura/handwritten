@@ -82,7 +82,7 @@ def closestNonZero(img, p, maxSize=21):
 class MyClass:
     count_letters = 290
 
-def filterSingleCharacter_new(letter_original_and_thersh):
+def filterSingleCharacter_new(letter_original_and_thersh, rectangle_parameters=[0.5,0.75,0.95]):
     letter_original = letter_original_and_thersh[0]
 
     threshold_border = letter_original_and_thersh[1]
@@ -103,7 +103,9 @@ def filterSingleCharacter_new(letter_original_and_thersh):
     If = cv2.adaptiveThreshold(If, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 5, 2)
     If = cv2.bitwise_not(If)
 
-    top_left_L, bottom_right_L = getBestRectangle(letter_original)
+    top_left_L, bottom_right_L = getBestRectangle(letter_original, default_th=rectangle_parameters[0],
+                                                                    low_ratio=rectangle_parameters[1],
+                                                                    upper_ratio=rectangle_parameters[2])
 
     # letter_original_copy = letter_original.copy()
     # letter_original = letter_original[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
@@ -137,7 +139,7 @@ def filterSingleCharacter_new(letter_original_and_thersh):
         imgResult = None
     else:
 
-        gb = 3  # grosor del borde
+        gb = 5  # grosor del borde
 
         borde = np.zeros(letter_original.shape, np.uint8)
         borde[top_left_L[1] - gb // 2:top_left_L[1] + (gb - gb // 2), :] = 255
@@ -560,94 +562,17 @@ def getBestRectangle_big(region, ratio_cols_over_rows):
 
 
 # recibe como parametro una region en escala de grises
-def getBestRectangle(region, default_th=0.5):
-    # B = range(max(0, region.shape[1] - 20), region.shape[1])
-    # copia = region.copy()
-    #
-    # copia[copia >= 0] = 0
-    # rows, cols = region.shape
-    #
-    # bestValue = -1.0
-    # bestA = 0
-    # bestB = 0
-    # bestPos = (-1, -1)
-    #
-    # sumRows = np.zeros((rows, cols))
-    # sumCols = np.zeros((rows, cols))
-    # for i in range(rows):
-    #     for j in range(cols):
-    #         if j == 0:
-    #             sumRows[i, j] = (1 if region[i, j] > 0 else 0)
-    #         else:
-    #             sumRows[i, j] = (1 if region[i, j] > 0 else 0) + sumRows[i, j - 1]
-    #
-    #         if i == 0:
-    #             sumCols[i, j] = (1 if region[i, j] > 0 else 0)
-    #         else:
-    #             sumCols[i, j] = (1 if region[i, j] > 0 else 0) + sumCols[i - 1, j]
-    # # print(region)
-    # # print(sumRows)
-    # # print(sumCols)
-    #
-    #
-    # for b in B:
-    #     minA = int(round(b / (ratio_cols_over_rows + 0.1)))
-    #     maxA = int(round(b / (ratio_cols_over_rows - 0.1)))
-    #     for a in range(minA, maxA):
-    #         cum = np.zeros((rows, cols))
-    #         for i in range(rows):
-    #             if i + a >= rows:
-    #                 break
-    #             for j in range(cols):
-    #                 if j + b >= cols:
-    #                     break
-    #                 # copia[copia >= 0] = 0
-    #                 # pi = (j, i)
-    #                 # pf = (j + b, i + a)
-    #                 # cv2.rectangle(copia, pi, pf, 255, thickness=1)
-    #                 # copia = cv2.bitwise_and(copia, region)
-    #                 # cantMatch = cv2.countNonZero(copia)
-    #                 # print('cant match: ', cantMatch)
-    #                 myCantMatch = countNonZeros(sumRows, sumCols, (i, j), (i + a, j + b))
-    #                 # print('cant mAtch: ', myCantMatch)
-    #                 cum[i, j] = myCantMatch / (2 * (a + b))
-    #                 # (I, J) = findMaxElement(cum)
-    #                 # print(I,J)
-    #                 # print('inicio', i, j)
-    #                 # print('longitudes', a, b)
-    #                 # print(cum)
-    #                 # plt.subplot(1, 2, 1), plt.imshow(region, 'gray'), plt.title('region')
-    #                 # plt.subplot(1, 2, 2), plt.imshow(copia, 'gray'), plt.title('copia con rect de 255')
-    #                 # plt.show()
-    #                 # cv2.rectangle(copia, pi, pf, 0, thickness=1)
-    #
-    #         (I, J) = findMaxElement(cum)
-    #         if cum[I, J] > bestValue:
-    #             bestValue = cum[I, J]
-    #             bestA = a
-    #             bestB = b
-    #             bestPos = (I, J)
-    #
-    # copia[copia >= 0] = 0
-    # pi = (bestPos[1], bestPos[0])
-    # pf = (bestPos[1] + bestB, bestPos[0] + bestA)
-    # # cv2.rectangle(copia, pi, pf, 255, thickness=1)
-    # # section = region[pi[1]:pf[1], pi[0]:pf[0]]
-    # # plt.subplot(1, 3, 1), plt.imshow(region, 'gray'), plt.title('region')
-    # # plt.subplot(1, 3, 2), plt.imshow(copia, 'gray'), plt.title('copia con rect de 255')
-    # # plt.subplot(1, 3, 3), plt.imshow(section, 'gray'), plt.title('best mark')
-    # # plt.show()
-    # ratioBuffer = UtilDebug.RatiosBuffer()
-    # ratioBuffer.append((bestA, bestB))
-    # retFirstAlgorithm = pi, pf
+def getBestRectangle(region, default_th=0.5, low_ratio = 0.75, upper_ratio = 0.95, to_debug=False):
+
 
     img = cv2.medianBlur(region, 1)
     to_find_border = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 5, 1)
 
-    # plt.subplot(1, 3, 1), plt.imshow(region,'gray'), plt.title('region')
-    # plt.subplot(1, 3, 2), plt.imshow(img,'gray'), plt.title('img')
-    # plt.subplot(1, 3, 3), plt.imshow(to_find_border,'gray'), plt.title('to_find_border')
-    # plt.show()
+    if to_debug:
+        plt.subplot(1, 3, 1), plt.imshow(region,'gray'), plt.title('region')
+        plt.subplot(1, 3, 2), plt.imshow(img,'gray'), plt.title('img')
+        plt.subplot(1, 3, 3), plt.imshow(to_find_border,'gray'), plt.title('to_find_border')
+        plt.show()
 
     #
     to_find_border = cv2.bitwise_not(to_find_border)
@@ -692,7 +617,7 @@ def getBestRectangle(region, default_th=0.5):
                         j = min(maxCols[m], maxCols[n])
                         b = max(maxCols[m], maxCols[n]) - j
 
-                        if 0.75 < b / a < 0.95 and b >= minB:
+                        if low_ratio < b / a < upper_ratio and b >= minB:
 
                             myCantMatch = countNonZeros(acumSumRows, acumSumCols, (i, j), (i + a, j + b))
                             # print('cant mAtch: ', myCantMatch)
@@ -1279,6 +1204,57 @@ def extractCategory_extractColumnLabelsTipoSiNo(img, TL, BR, cantColumns):
     arrayResult.append(left)
     arrayResult.append(right)
     return arrayResult
+def extractCategory_extractSquareS100(img, TL, BR, cantColumns):
+    deltaAmpliacion = 3
+    ROI_base = img[TL[1] - deltaAmpliacion:BR[1] + deltaAmpliacion, TL[0] - deltaAmpliacion:BR[0] + deltaAmpliacion]
+
+    top_left_L, bottom_right_L = getBestRectangle(ROI_base, default_th=0.5, low_ratio=0.4, upper_ratio=0.6,
+                                                  to_debug=False)
+    delta_L = (bottom_right_L[0] - top_left_L[0], bottom_right_L[1] - top_left_L[1])
+
+    bestLeft = ROI_base[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
+
+    blur = cv2.GaussianBlur(bestLeft, (3, 3), 0)
+    ret5, to_extract_letters = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+    min_wh = min(to_extract_letters.shape)
+    min_wh = (3*min_wh)//4
+
+    top_row = to_extract_letters.shape[0] // 2 - min_wh // 2
+    bot_row = to_extract_letters.shape[0] // 2 + min_wh // 2
+
+    left_col = to_extract_letters.shape[1] // 2 - min_wh // 2
+    right_col = to_extract_letters.shape[1] // 2 + min_wh // 2
+
+    center = to_extract_letters[top_row:bot_row, left_col:right_col]
+    # plt.subplot(1, 3, 1), plt.imshow(ROI_base, 'gray'), plt.title('ROIS')
+    # plt.subplot(1, 3, 2), plt.imshow(bestLeft, 'gray'), plt.title('bestLeft')
+    # plt.subplot(1, 3, 3), plt.imshow(center, 'gray'), plt.title('center')
+    #
+    # plt.show()
+
+    arrayResult = []
+    arrayResult.append(center)
+    # arrayResult.append(right)
+    return arrayResult
+def predictValuesCategory_SquareS100(list_images, labels):
+    if len(labels) != 1:
+        raise  Exception('deberia ser solo un label, se tiene:', labels)
+    img = list_images[0]
+    total_area = img.shape[0]*img.shape[1]
+    zeros = total_area - cv2.countNonZero(img)
+
+    results = []
+
+    if zeros/total_area > 0.2:
+        results.append(labels[0])
+    else:
+        results.append('?')
+    #
+    # print('zeros: ',zeros)
+    # plt.imshow(img)
+    # plt.show()
+    return results
 
 
 def extractCategory_extractColumnLabelsDocumento(img, TL, BR, cantColumns):
@@ -1710,6 +1686,225 @@ def predictCuadros(img, TL, BR, count):
         getBestRectangle(ROI[minX:maxX, minY:maxY])
 
 
+def extractCharacters_DNI_S100(img, TL, BR, count):
+    numRows = (BR[0] - TL[0]) / count
+    numCols = BR[1] - TL[1]
+    # print('finding ratio nr/nc : ' + str(numRows)+' / ' + str(numCols)+'  divided by '+ str(count))
+
+
+    deltaAmpliacion = 5
+
+    ROI = img[TL[1] - deltaAmpliacion:BR[1] + deltaAmpliacion, TL[0] - deltaAmpliacion:BR[0] + deltaAmpliacion+2]
+
+
+    # plt.imshow(ROI,'gray')
+    # plt.show()
+
+    # TODO revisar ampliacion de imagen si es necesario
+
+    col_size = 45
+    col_size = min(col_size, ROI.shape[1]-(deltaAmpliacion*2-1)-1)
+    leftPart = ROI[:, 0:(col_size + (deltaAmpliacion * 2 - 1))]
+    rightPart = ROI[:, -(col_size + (deltaAmpliacion * 2 - 1)):]
+    #
+    # plt.subplot(2, 2, 1), plt.imshow(ROI, 'gray')
+    # plt.subplot(2, 2, 3), plt.imshow(leftPart, 'gray')
+    # plt.subplot(2, 2, 4), plt.imshow(rightPart, 'gray')
+    # plt.show()
+
+    top_left_L, bottom_right_L = getBestRectangle(leftPart, default_th=0.5, low_ratio=0.68, upper_ratio=0.78, to_debug=False)
+    delta_L = (bottom_right_L[0] - top_left_L[0], bottom_right_L[1] - top_left_L[1])
+
+    top_left_R, bottom_right_R = getBestRectangle(rightPart, default_th=0.5, low_ratio=0.68, upper_ratio=0.78, to_debug=False)
+    delta_R = (bottom_right_R[0] - top_left_R[0], bottom_right_R[1] - top_left_R[1])
+
+    bestLeft = leftPart[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
+    bestRight = rightPart[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
+
+    # print('If shape: ', If.shape)
+    # print('template shape: ', template.shape)
+    # print('current top_left_R', top_left_R)
+    top_left_R = (top_left_R[0] + ROI.shape[1] - (col_size + ((deltaAmpliacion * 2 - 1))), top_left_R[1])
+    bottom_right_R = (top_left_R[0] + delta_R[0], top_left_R[1] + delta_R[1])
+    # print('after top_left_R', top_left_R)
+    possibleBestLeft = ROI[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
+    possibleBestRight = ROI[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
+    #
+    # plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
+    #
+    # plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
+    # plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
+    # plt.subplot(1, 8, 5), plt.imshow(bestLeft), plt.title('bestLeft')
+    # plt.subplot(1, 8, 6), plt.imshow(possibleBestLeft), plt.title('possibleBestLeft')
+    # plt.subplot(1, 8, 7), plt.imshow(bestRight), plt.title('bestRight')
+    # plt.subplot(1, 8, 8), plt.imshow(possibleBestRight), plt.title('possbielBestRight')
+    # plt.show()
+
+    pointA = (top_left_L[1], top_left_L[0])
+    pointY = (bottom_right_R[1], bottom_right_R[0])
+
+    pointB = (pointY[0], pointA[1])
+    pointX = (pointA[0], pointY[1])
+
+    res = []
+    TL = pointA
+    BR = pointY
+    BL = (bottom_right_L[1], top_left_L[0])
+    TR = (top_left_R[1], bottom_right_R[0])
+    res.extend(getPixels(ROI, TL, TR))
+    res.extend(getPixels(ROI, BL, BR))
+    for k in range(0, count):
+        s = getPointProportion(TL, TR, k, count - k)
+        t = getPointProportion(BL, BR, k, count - k)
+        res.extend(getPixels(ROI, s, t))
+    res.extend(getPixels(ROI, TR, BR))
+    np_mean = int(np.mean(res))
+    np_stdv = int(np.std(res))
+    # print(pointA,pointB,pointX,pointY,ROI.shape)
+    ROI_2 = ROI[pointA[0]:pointY[0], pointA[1]:pointY[1]]
+
+    # plt.subplot(2,1,1), plt.imshow(ROI)
+    # plt.subplot(2, 1, 2), plt.imshow(ROI_2)
+    # plt.show()
+
+    letters = []
+    for k in range(0, count):
+        upperLeft = getPointProportion(pointA, pointX, k, count - k)
+        bottomLeft = getPointProportion(pointB, pointY, k, count - k)
+        upperRight = getPointProportion(pointA, pointX, k + 1, count - (k + 1))
+        bottomRight = getPointProportion(pointB, pointY, k + 1, count - (k + 1))
+        delta = 2
+        minX = max(0, min(upperLeft[0], bottomLeft[0]) - delta)
+        maxX = min(ROI.shape[0], max(upperRight[0], bottomRight[0]) + delta)
+
+        minY = max(0, min(bottomLeft[1], bottomRight[1]) - delta*2)
+        maxY = min(ROI.shape[1], max(upperLeft[1], upperRight[1]) + delta*2)
+
+        singleCharacter = (ROI[minX:maxX, minY:maxY], (np_mean - 2 * np_stdv))
+        letters.append(singleCharacter)
+
+    filteredLetters = []
+
+    for letter in letters:
+        singleLetterFiltered = filterSingleCharacter_new(letter, rectangle_parameters=[0.5,0.68,0.78])
+        filteredLetters.append(singleLetterFiltered)
+
+        # if singleLetterFiltered != None:
+        #    plt.imshow(singleLetterFiltered)
+        #    plt.show()
+
+    return filteredLetters
+
+
+def extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count):
+    numRows = (BR[0] - TL[0]) / count
+    numCols = BR[1] - TL[1]
+    # print('finding ratio nr/nc : ' + str(numRows)+' / ' + str(numCols)+'  divided by '+ str(count))
+
+
+    deltaAmpliacion = 5
+
+    ROI = img[TL[1] - deltaAmpliacion:BR[1] + deltaAmpliacion, TL[0] - deltaAmpliacion:BR[0] + deltaAmpliacion]
+
+
+    # plt.imshow(ROI,'gray')
+    # plt.show()
+
+    # TODO revisar ampliacion de imagen si es necesario
+
+    col_size = 25
+    leftPart = ROI[:, 0:(col_size + (deltaAmpliacion * 2 - 1))]
+    rightPart = ROI[:, -(col_size + (deltaAmpliacion * 2 - 1)):]
+
+    # plt.subplot(2, 2, 1), plt.imshow(ROI, 'gray')
+    # plt.subplot(2, 2, 3), plt.imshow(leftPart, 'gray')
+    # plt.subplot(2, 2, 4), plt.imshow(rightPart, 'gray')
+    # plt.show()
+
+    top_left_L, bottom_right_L = getBestRectangle(leftPart, default_th=0.5, low_ratio=0.4,upper_ratio=0.6, to_debug=False)
+    delta_L = (bottom_right_L[0] - top_left_L[0], bottom_right_L[1] - top_left_L[1])
+
+    top_left_R, bottom_right_R = getBestRectangle(rightPart, default_th=0.5, low_ratio=0.4,upper_ratio=0.6, to_debug=False)
+    delta_R = (bottom_right_R[0] - top_left_R[0], bottom_right_R[1] - top_left_R[1])
+
+    bestLeft = leftPart[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
+    bestRight = rightPart[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
+
+    # print('If shape: ', If.shape)
+    # print('template shape: ', template.shape)
+    # print('current top_left_R', top_left_R)
+    top_left_R = (top_left_R[0] + ROI.shape[1] - (col_size + ((deltaAmpliacion * 2 - 1))), top_left_R[1])
+    bottom_right_R = (top_left_R[0] + delta_R[0], top_left_R[1] + delta_R[1])
+    # print('after top_left_R', top_left_R)
+    possibleBestLeft = ROI[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
+    possibleBestRight = ROI[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
+
+    # plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
+    #
+    # plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
+    # plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
+    # plt.subplot(1, 8, 5), plt.imshow(bestLeft), plt.title('bestLeft')
+    # plt.subplot(1, 8, 6), plt.imshow(possibleBestLeft), plt.title('possibleBestLeft')
+    # plt.subplot(1, 8, 7), plt.imshow(bestRight), plt.title('bestRight')
+    # plt.subplot(1, 8, 8), plt.imshow(possibleBestRight), plt.title('possbielBestRight')
+    # plt.show()
+
+    pointA = (top_left_L[1], top_left_L[0])
+    pointY = (bottom_right_R[1], bottom_right_R[0])
+
+    pointB = (pointY[0], pointA[1])
+    pointX = (pointA[0], pointY[1])
+
+    res = []
+    TL = pointA
+    BR = pointY
+    BL = (bottom_right_L[1], top_left_L[0])
+    TR = (top_left_R[1], bottom_right_R[0])
+    res.extend(getPixels(ROI, TL, TR))
+    res.extend(getPixels(ROI, BL, BR))
+    for k in range(0, count):
+        s = getPointProportion(TL, TR, k, count - k)
+        t = getPointProportion(BL, BR, k, count - k)
+        res.extend(getPixels(ROI, s, t))
+    res.extend(getPixels(ROI, TR, BR))
+    np_mean = int(np.mean(res))
+    np_stdv = int(np.std(res))
+    # print(pointA,pointB,pointX,pointY,ROI.shape)
+    ROI_2 = ROI[pointA[0]:pointY[0], pointA[1]:pointY[1]]
+
+    # plt.subplot(2,1,1), plt.imshow(ROI)
+    # plt.subplot(2, 1, 2), plt.imshow(ROI_2)
+    # plt.show()
+
+    letters = []
+    for k in range(0, count):
+        upperLeft = getPointProportion(pointA, pointX, k, count - k)
+        bottomLeft = getPointProportion(pointB, pointY, k, count - k)
+        upperRight = getPointProportion(pointA, pointX, k + 1, count - (k + 1))
+        bottomRight = getPointProportion(pointB, pointY, k + 1, count - (k + 1))
+        delta = 2
+        minX = max(0, min(upperLeft[0], bottomLeft[0]) - delta)
+        maxX = min(ROI.shape[0], max(upperRight[0], bottomRight[0]) + delta)
+
+        minY = max(0, min(bottomLeft[1], bottomRight[1]) - delta*2)
+        maxY = min(ROI.shape[1], max(upperLeft[1], upperRight[1]) + delta*2)
+
+        singleCharacter = (ROI[minX:maxX, minY:maxY], (np_mean - 2 * np_stdv))
+        letters.append(singleCharacter)
+
+    filteredLetters = []
+
+    for letter in letters:
+        singleLetterFiltered = filterSingleCharacter_new(letter, rectangle_parameters=[0.5,0.4,0.6])
+        filteredLetters.append(singleLetterFiltered)
+
+        # if singleLetterFiltered != None:
+        #    plt.imshow(singleLetterFiltered)
+        #    plt.show()
+
+    return filteredLetters
+
+
 def extractCharacters(img, TL, BR, count):
     numRows = (BR[0] - TL[0]) / count
     numCols = BR[1] - TL[1]
@@ -1720,7 +1915,7 @@ def extractCharacters(img, TL, BR, count):
 
     ROI = img[TL[1] - deltaAmpliacion:BR[1] + deltaAmpliacion, TL[0] - deltaAmpliacion:BR[0] + deltaAmpliacion]
 
-    #
+
     # plt.imshow(ROI,'gray')
     # plt.show()
 
@@ -1753,7 +1948,7 @@ def extractCharacters(img, TL, BR, count):
     possibleBestLeft = ROI[top_left_L[1]:bottom_right_L[1], top_left_L[0]:bottom_right_L[0]]
     possibleBestRight = ROI[top_left_R[1]:bottom_right_R[1], top_left_R[0]:bottom_right_R[0]]
 
-    # plt.subplot(1,8,1), plt.imshow(If), plt.title('If')
+    # plt.subplot(1,8,1), plt.imshow(ROI), plt.title('ROI')
     # plt.subplot(1, 8, 2), plt.imshow(template), plt.title('template')
     # plt.subplot(1, 8, 3), plt.imshow(leftPart), plt.title('leftPart')
     # plt.subplot(1, 8, 4), plt.imshow(rightPart), plt.title('rightPart')
@@ -1811,7 +2006,7 @@ def extractCharacters(img, TL, BR, count):
     for letter in letters:
         singleLetterFiltered = filterSingleCharacter_new(letter)
         filteredLetters.append(singleLetterFiltered)
-
+        #
         # if singleLetterFiltered != None:
         #    plt.imshow(singleLetterFiltered)
         #    plt.show()

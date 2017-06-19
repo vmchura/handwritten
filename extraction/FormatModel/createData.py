@@ -6,9 +6,10 @@ from extraction.FormatModel.UtilFunctionsLoadTemplates import loadCategory
 import pickle
 import cv2
 import json
-pagina = '4'
-fileToEdit = 'pagina'+pagina+'.json'
-image = cv2.imread('../../resources/pag'+pagina+'_1_Template.png')
+
+pagina = '2'
+fileToEdit = 'paginaNew'+pagina+'.json'
+image = cv2.imread('../../resources/pag'+pagina+'_Template.png')
 
 def click_and_crop(event, x, y, flags, param):
     # grab references to the global variables
@@ -17,11 +18,15 @@ def click_and_crop(event, x, y, flags, param):
     # if the left mouse button was clicked, record the starting
     # (x, y) coordinates and indicate that cropping is being
     # performed
+    delta_rows = image.shape[0] // 2
+    y = y + delta_rows
     if event == cv2.EVENT_LBUTTONDOWN:
+
         refPt = [(x, y)]
         cropping = True
 
     # check to see if the left mouse button was released
+
     elif event == cv2.EVENT_LBUTTONUP:
         # record the ending (x, y) coordinates and indicate that
         # the cropping operation is finished
@@ -30,7 +35,7 @@ def click_and_crop(event, x, y, flags, param):
 
         # draw a rectangle around the region of interest
         cv2.rectangle(image, refPt[0], refPt[1], (0, 255, 0), 2)
-        cv2.imshow("image", image)
+        cv2.imshow("image", image[delta_rows:,:])
 
 
 
@@ -54,6 +59,7 @@ if __name__ == '__main__':
     cv2.setMouseCallback("image", click_and_crop)
     # keep looping until the 'q' key is pressed
 
+    delta_rows = image.shape[0]//2
     while True:
 
         R = Page1.getAllWithValue()
@@ -64,7 +70,9 @@ if __name__ == '__main__':
                 cv2.putText(image, str(label), category[1].value.position[0], fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                             fontScale=1, color=(0, 0, 255), thickness=2)
             print(label, '][', category[0])
-        cv2.imshow("image", image)
+
+
+        cv2.imshow("image", image[delta_rows:,:])
 
         cv2.waitKey(400)
         x = int(raw_input('>=0 para continuar, -1 para terminar'))
@@ -85,7 +93,7 @@ if __name__ == '__main__':
 
         while True:
             # display the image and wait for a keypress
-            cv2.imshow("image", image)
+            cv2.imshow("image", image[delta_rows:,:])
             key = cv2.waitKey(1) & 0xFF
 
             # if the 'r' key is pressed, reset the cropping region

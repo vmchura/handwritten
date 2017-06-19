@@ -67,6 +67,10 @@ class RawValue:
                 return ArrayPredictedNumber(self.predictedValue)
         elif self.nameParser == 'parserImage2Categoric':
             return PredictedCategoric(self.predictedValue)
+        elif self.nameParser == 'parserImage2ArrayChar_DNI_S100':
+            return ArrayPredictedNumber(self.predictedValue)
+        elif self.nameParser == 'parserImage2ArrayChar_FECHA_NACIMIENTO_S100':
+            return ArrayPredictedNumber(self.predictedValue)
         print(self.nameParser)
         if self.nameSingleParser is not None:
             print(self.nameSingleParser)
@@ -124,6 +128,60 @@ class RawValue:
         self.arrayOfImages = arrayOfImages
         charArray_timer.endTimer()
         return self.predictedValue
+
+    def parserImage2ArrayChar_DNI_S100(self, arg):
+        if self.singleParser == self.letterPredictor:
+            charArray_timer = UtilDebug.ArrayLetterTimer()
+        else:
+            charArray_timer = UtilDebug.ArrayDigitTimer()
+
+        charArray_timer.startTimer(1) #self.count
+        img = arg
+
+        TL = self.position[0]
+        BR = self.position[1]
+        count = self.countItems
+        arrayOfImages = UtilFunctionsExtraction.extractCharacters_DNI_S100(img, TL, BR, count)
+        arrayResult = []
+        for singleImage in arrayOfImages:
+            if singleImage is None:
+                predicted = None
+            else:
+                predicted = self.singleParser(singleImage)
+
+            arrayResult.append(predicted)
+        #UtilFunctionsExtraction.plotImagesWithPrediction(arrayResult,arrayOfImages)
+        self.predictedValue = arrayResult
+        self.arrayOfImages = arrayOfImages
+        charArray_timer.endTimer()
+        return self.predictedValue
+    def parserImage2ArrayChar_FECHA_NACIMIENTO_S100(self, arg):
+        if self.singleParser == self.letterPredictor:
+            charArray_timer = UtilDebug.ArrayLetterTimer()
+        else:
+            charArray_timer = UtilDebug.ArrayDigitTimer()
+
+        charArray_timer.startTimer(1) #self.count
+        img = arg
+
+        TL = self.position[0]
+        BR = self.position[1]
+        count = self.countItems
+        arrayOfImages = UtilFunctionsExtraction.extractCharacters_FECHA_NACIMIENTO_S100(img, TL, BR, count)
+        arrayResult = []
+        for singleImage in arrayOfImages:
+            if singleImage is None:
+                predicted = None
+            else:
+                predicted = self.singleParser(singleImage)
+
+            arrayResult.append(predicted)
+        #UtilFunctionsExtraction.plotImagesWithPrediction(arrayResult,arrayOfImages)
+        self.predictedValue = arrayResult
+        self.arrayOfImages = arrayOfImages
+        charArray_timer.endTimer()
+        return self.predictedValue
+
 
     def calcCuadroArrayChar(self, arg):
         if self.singleParser == self.letterPredictor:
@@ -231,6 +289,20 @@ class RawValue:
             self.predictedValue.append(r)
         return self.predictedValue
 
+    def parserCategoricSquareS100(self, arg):
+        img = arg
+        TL = self.position[0]
+        BR = self.position[1]
+        labels = self.position[2]
+        self.countItems = len(labels)
+        self.arrayOfImages = UtilFunctionsExtraction.extractCategory_extractSquareS100(img, TL, BR, len(labels))
+        results = UtilFunctionsExtraction.predictValuesCategory_SquareS100(self.arrayOfImages, labels)
+        self.predictedValue = []
+        for r in results:
+            self.predictedValue.append(r)
+
+        return self.predictedValue
+
     def parserCategoricLabelsSiNo(self, arg):
         img = arg
         TL = self.position[0]
@@ -261,6 +333,20 @@ class ArrayImageNumber(RawValue):
     def __str__(self):
         return 'ArrayImageNumber: ' + str(self.countItems)
 
+class ArrayImageNumber_DNI_S100(RawValue):
+    def __init__(self, position, count):
+        super().__init__(position, count, self.parserImage2ArrayChar_DNI_S100, 'parserImage2ArrayChar_DNI_S100',
+                         self.digitPredictor, 'digitPredictor')
+    def __str__(self):
+        return 'ArrayImageNumber: ' + str(self.countItems)
+
+
+class ArrayImageNumber_FECHA_NACIMIENTO_S100(RawValue):
+    def __init__(self, position, count):
+        super().__init__(position, count, self.parserImage2ArrayChar_FECHA_NACIMIENTO_S100, 'parserImage2ArrayChar_FECHA_NACIMIENTO_S100',
+                         self.digitPredictor, 'digitPredictor')
+    def __str__(self):
+        return 'ArrayImageNumber: ' + str(self.countItems)
 
 class ArrayImageChar(RawValue):
     def __init__(self, position, count):
@@ -351,6 +437,19 @@ class ImageCategoricLabelsTipoSuministro(RawValue):
 
     def __str__(self):
         return 'ImageCategoric  : ' + str(self.countItems)
+
+class ImageCategoricSquareS100(RawValue):
+    def __init__(self, position, count):
+        if count == 1:
+            super().__init__(position, 1, self.parserImage2Categoric, 'parserImage2Categoric',
+                             self.parserCategoricSquareS100, 'parserCategoricSquareS100')
+        else:
+            raise Exception('Categoric values always should have count = 1')
+
+    def __str__(self):
+        return 'ImageCategoric  : ' + str(self.countItems)
+
+
 class ArrayPredictedNumber(RawValue):
     def __init__(self, value):
         super().__init__(value, -1, None, 'parserImage2ArrayChar',None, 'digitPredictor')

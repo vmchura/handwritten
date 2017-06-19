@@ -1,0 +1,4393 @@
+{
+    "description": "pagina 1",
+    "subTypes": [
+        {
+            "description": "Informacion general de solicitud",
+            "subTypes": [
+                {
+                    "description": "Numero de solicitud",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        8,
+                                        138
+                                    ],
+                                    [
+                                        265,
+                                        175
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "solicitud",
+                    "value": null
+                },
+                {
+                    "description": "Ubigeo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        337,
+                                        139
+                                    ],
+                                    [
+                                        543,
+                                        174
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "ubigeo",
+                    "value": null
+                },
+                {
+                    "description": "DNI del solicitante",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        672,
+                                        138
+                                    ],
+                                    [
+                                        946,
+                                        175
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "dni_sol",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de solicitud",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1027,
+                                        139
+                                    ],
+                                    [
+                                        1232,
+                                        175
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_sol",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "info_general_sol",
+            "value": null
+        },
+        {
+            "description": "Datos de la persona solicitante",
+            "subTypes": [
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "letterPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        189,
+                                        250
+                                    ],
+                                    [
+                                        1213,
+                                        287
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 30,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno_sol",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "letterPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        189,
+                                        294
+                                    ],
+                                    [
+                                        1213,
+                                        330
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 30,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno_sol",
+                    "value": null
+                },
+                {
+                    "description": "Nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "letterPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        189,
+                                        337
+                                    ],
+                                    [
+                                        1213,
+                                        374
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 30,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres_sol",
+                    "value": null
+                },
+                {
+                    "description": "Tipo de solicitante - Representante del hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        430,
+                                        384
+                                    ],
+                                    [
+                                        460,
+                                        413
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_solicitante_1",
+                    "value": null
+                },
+                {
+                    "description": "Tipo de solicitante - Servidor publico",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1012,
+                                        384
+                                    ],
+                                    [
+                                        1042,
+                                        414
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_solicitante_2",
+                    "value": null
+                },
+                {
+                    "description": "Telefono",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        905,
+                                        417
+                                    ],
+                                    [
+                                        1215,
+                                        453
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 9,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "telefono",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "datos_persona_sol",
+            "value": null
+        },
+        {
+            "description": "Situacion del hogar",
+            "subTypes": [
+                {
+                    "description": "No tiene cse",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        581,
+                                        516
+                                    ],
+                                    [
+                                        610,
+                                        545
+                                    ],["X"]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "situacion21",
+                    "value": null
+                },
+                {
+                    "description": "Incorporacion de menor",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        581,
+                                        557
+                                    ],
+                                    [
+                                        610,
+                                        586
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "situacion22",
+                    "value": null
+                },
+                {
+                    "description": "Incorporacion o salida de integrante",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        581,
+                                        596
+                                    ],
+                                    [
+                                        610,
+                                        625
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "situacion23",
+                    "value": null
+                },
+                {
+                    "description": "Cambio de domicilio",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        581,
+                                        636
+                                    ],
+                                    [
+                                        610,
+                                        665
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "situacion24",
+                    "value": null
+                },
+                {
+                    "description": "No estoy de acuerdo con cse",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1180,
+                                        517
+                                    ],
+                                    [
+                                        1209,
+                                        546
+                                    ], ["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "situacion25",
+                    "value": null
+                },
+                {
+                    "description": "Se requiere verificar info de hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1180,
+                                        558
+                                    ],
+                                    [
+                                        1209,
+                                        587
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "situacion26",
+                    "value": null
+                },
+                {
+                    "description": "Otras circunstancias",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1180,
+                                        595
+                                    ],
+                                    [
+                                        1209,
+                                        624
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "situacion27",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "situacion_hogar",
+            "value": null
+        },
+        {
+            "description": "Registro de padre, madre o tutor",
+            "subTypes": [
+                {
+                    "description": "Padre",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        105,
+                                        728
+                                    ],
+                                    [
+                                        134,
+                                        757
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "reg_padre",
+                    "value": null
+                },
+                {
+                    "description": "Madre",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        236,
+                                        728
+                                    ],
+                                    [
+                                        265,
+                                        757
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "reg_madre",
+                    "value": null
+                },
+                {
+                    "description": "Tutor",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "parserCategoricSquareS100",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        105,
+                                        770
+                                    ],
+                                    [
+                                        134,
+                                        799
+                                    ],["X"]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "reg_tutor",
+                    "value": null
+                },
+                {
+                    "description": "Documento de indendidad",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        294,
+                                        755
+                                    ],
+                                    [
+                                        567,
+                                        791
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "reg_documento",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "registro_padre_madre",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 01",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1109
+                                    ],
+                                    [
+                                        85,
+                                        1159
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1109
+                                    ],
+                                    [
+                                        397,
+                                        1158
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1110
+                                    ],
+                                    [
+                                        570,
+                                        1159
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1110
+                                    ],
+                                    [
+                                        745,
+                                        1159
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1110
+                                    ],
+                                    [
+                                        880,
+                                        1159
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1109
+                                    ],
+                                    [
+                                        1027,
+                                        1159
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1124
+                                    ],
+                                    [
+                                        1062,
+                                        1151
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1124
+                                    ],
+                                    [
+                                        1129,
+                                        1151
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1124
+                                    ],
+                                    [
+                                        1210,
+                                        1151
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P01",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 02",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1160
+                                    ],
+                                    [
+                                        85,
+                                        1210
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1160
+                                    ],
+                                    [
+                                        397,
+                                        1209
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1161
+                                    ],
+                                    [
+                                        570,
+                                        1210
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1161
+                                    ],
+                                    [
+                                        745,
+                                        1210
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1161
+                                    ],
+                                    [
+                                        880,
+                                        1210
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1160
+                                    ],
+                                    [
+                                        1027,
+                                        1210
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1175
+                                    ],
+                                    [
+                                        1062,
+                                        1202
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1175
+                                    ],
+                                    [
+                                        1129,
+                                        1202
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1175
+                                    ],
+                                    [
+                                        1210,
+                                        1202
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P02",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 03",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1210
+                                    ],
+                                    [
+                                        85,
+                                        1260
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1210
+                                    ],
+                                    [
+                                        397,
+                                        1259
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1211
+                                    ],
+                                    [
+                                        570,
+                                        1260
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1211
+                                    ],
+                                    [
+                                        745,
+                                        1260
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1211
+                                    ],
+                                    [
+                                        880,
+                                        1260
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1210
+                                    ],
+                                    [
+                                        1027,
+                                        1260
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1225
+                                    ],
+                                    [
+                                        1062,
+                                        1252
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1225
+                                    ],
+                                    [
+                                        1129,
+                                        1252
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1225
+                                    ],
+                                    [
+                                        1210,
+                                        1252
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P03",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 04",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1260
+                                    ],
+                                    [
+                                        85,
+                                        1310
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1260
+                                    ],
+                                    [
+                                        397,
+                                        1309
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1261
+                                    ],
+                                    [
+                                        570,
+                                        1310
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1261
+                                    ],
+                                    [
+                                        745,
+                                        1310
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1261
+                                    ],
+                                    [
+                                        880,
+                                        1310
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1260
+                                    ],
+                                    [
+                                        1027,
+                                        1310
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1275
+                                    ],
+                                    [
+                                        1062,
+                                        1302
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1275
+                                    ],
+                                    [
+                                        1129,
+                                        1302
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1275
+                                    ],
+                                    [
+                                        1210,
+                                        1302
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P04",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 05",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1310
+                                    ],
+                                    [
+                                        85,
+                                        1360
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1310
+                                    ],
+                                    [
+                                        397,
+                                        1359
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1311
+                                    ],
+                                    [
+                                        570,
+                                        1360
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1311
+                                    ],
+                                    [
+                                        745,
+                                        1360
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1311
+                                    ],
+                                    [
+                                        880,
+                                        1360
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1310
+                                    ],
+                                    [
+                                        1027,
+                                        1360
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1325
+                                    ],
+                                    [
+                                        1062,
+                                        1352
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1325
+                                    ],
+                                    [
+                                        1129,
+                                        1352
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1325
+                                    ],
+                                    [
+                                        1210,
+                                        1352
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P05",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 06",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1360
+                                    ],
+                                    [
+                                        85,
+                                        1410
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1360
+                                    ],
+                                    [
+                                        397,
+                                        1409
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1361
+                                    ],
+                                    [
+                                        570,
+                                        1410
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1361
+                                    ],
+                                    [
+                                        745,
+                                        1410
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1361
+                                    ],
+                                    [
+                                        880,
+                                        1410
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1360
+                                    ],
+                                    [
+                                        1027,
+                                        1410
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1375
+                                    ],
+                                    [
+                                        1062,
+                                        1402
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1375
+                                    ],
+                                    [
+                                        1129,
+                                        1402
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1375
+                                    ],
+                                    [
+                                        1210,
+                                        1402
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P06",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 07",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1410
+                                    ],
+                                    [
+                                        85,
+                                        1460
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1410
+                                    ],
+                                    [
+                                        397,
+                                        1459
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1411
+                                    ],
+                                    [
+                                        570,
+                                        1460
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1411
+                                    ],
+                                    [
+                                        745,
+                                        1460
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1411
+                                    ],
+                                    [
+                                        880,
+                                        1460
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1410
+                                    ],
+                                    [
+                                        1027,
+                                        1460
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1425
+                                    ],
+                                    [
+                                        1062,
+                                        1452
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1425
+                                    ],
+                                    [
+                                        1129,
+                                        1452
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1425
+                                    ],
+                                    [
+                                        1210,
+                                        1452
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P07",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 08",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1460
+                                    ],
+                                    [
+                                        85,
+                                        1510
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1460
+                                    ],
+                                    [
+                                        397,
+                                        1509
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1461
+                                    ],
+                                    [
+                                        570,
+                                        1510
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1461
+                                    ],
+                                    [
+                                        745,
+                                        1510
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1461
+                                    ],
+                                    [
+                                        880,
+                                        1510
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1460
+                                    ],
+                                    [
+                                        1027,
+                                        1510
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1475
+                                    ],
+                                    [
+                                        1062,
+                                        1502
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1475
+                                    ],
+                                    [
+                                        1129,
+                                        1502
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1475
+                                    ],
+                                    [
+                                        1210,
+                                        1502
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P08",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 09",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1510
+                                    ],
+                                    [
+                                        85,
+                                        1560
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1510
+                                    ],
+                                    [
+                                        397,
+                                        1559
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1511
+                                    ],
+                                    [
+                                        570,
+                                        1560
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1511
+                                    ],
+                                    [
+                                        745,
+                                        1560
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1511
+                                    ],
+                                    [
+                                        880,
+                                        1560
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1510
+                                    ],
+                                    [
+                                        1027,
+                                        1560
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1525
+                                    ],
+                                    [
+                                        1062,
+                                        1552
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1525
+                                    ],
+                                    [
+                                        1129,
+                                        1552
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1525
+                                    ],
+                                    [
+                                        1210,
+                                        1552
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P09",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 10",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1560
+                                    ],
+                                    [
+                                        85,
+                                        1610
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1560
+                                    ],
+                                    [
+                                        397,
+                                        1609
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1561
+                                    ],
+                                    [
+                                        570,
+                                        1610
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1561
+                                    ],
+                                    [
+                                        745,
+                                        1610
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1561
+                                    ],
+                                    [
+                                        880,
+                                        1610
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1560
+                                    ],
+                                    [
+                                        1027,
+                                        1610
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1575
+                                    ],
+                                    [
+                                        1062,
+                                        1602
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1575
+                                    ],
+                                    [
+                                        1129,
+                                        1602
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1575
+                                    ],
+                                    [
+                                        1210,
+                                        1602
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P10",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 11",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1610
+                                    ],
+                                    [
+                                        85,
+                                        1660
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1610
+                                    ],
+                                    [
+                                        397,
+                                        1659
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1611
+                                    ],
+                                    [
+                                        570,
+                                        1660
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1611
+                                    ],
+                                    [
+                                        745,
+                                        1660
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1611
+                                    ],
+                                    [
+                                        880,
+                                        1660
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1610
+                                    ],
+                                    [
+                                        1027,
+                                        1660
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1625
+                                    ],
+                                    [
+                                        1062,
+                                        1652
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1625
+                                    ],
+                                    [
+                                        1129,
+                                        1652
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1625
+                                    ],
+                                    [
+                                        1210,
+                                        1652
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P11",
+            "value": null
+        },
+        {
+            "description": "Declaracion del integrante 12",
+            "subTypes": [
+                {
+                    "description": "Tipo de documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        48,
+                                        1660
+                                    ],
+                                    [
+                                        85,
+                                        1710
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "tipo_documento",
+                    "value": null
+                },
+                {
+                    "description": "Numero documento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        106,
+                                        1660
+                                    ],
+                                    [
+                                        397,
+                                        1709
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_DNI_S100",
+                                "countItems": 8,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "numero_documento",
+                    "value": null
+                },
+                {
+                    "description": "Apellido paterno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        398,
+                                        1661
+                                    ],
+                                    [
+                                        570,
+                                        1710
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_paterno",
+                    "value": null
+                },
+                {
+                    "description": "Apellido materno",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        570,
+                                        1661
+                                    ],
+                                    [
+                                        745,
+                                        1710
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "apellido_materno",
+                    "value": null
+                },
+                {
+                    "description": "nombres",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": null,
+                                "parser": {},
+                                "position": [
+                                    [
+                                        744,
+                                        1661
+                                    ],
+                                    [
+                                        880,
+                                        1710
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2Categoric",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "nombres",
+                    "value": null
+                },
+                {
+                    "description": "Fecha de nacimiento",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        880,
+                                        1660
+                                    ],
+                                    [
+                                        1027,
+                                        1710
+                                    ]
+                                ],
+                                "singleParser": {},
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar_FECHA_NACIMIENTO_S100",
+                                "countItems": 6,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "fecha_nacimiento",
+                    "value": null
+                },
+                {
+                    "description": "Sexo",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1034,
+                                        1675
+                                    ],
+                                    [
+                                        1062,
+                                        1702
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "sexo",
+                    "value": null
+                },
+                {
+                    "description": "Parentesco jefe hogar",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1101,
+                                        1675
+                                    ],
+                                    [
+                                        1129,
+                                        1702
+                                    ]
+                                ],
+                                "singleParser": "digitPredictor",
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "parentesco_jefe_hogar",
+                    "value": null
+                },
+                {
+                    "description": "Residente habitual",
+                    "subTypes": [
+                        {
+                            "description": "posicion final",
+                            "subTypes": [],
+                            "hasValue": true,
+                            "name": "pos_TL_BR",
+                            "value": {
+                                "nameSingleParser": "digitPredictor",
+                                "parser": {},
+                                "position": [
+                                    [
+                                        1182,
+                                        1675
+                                    ],
+                                    [
+                                        1210,
+                                        1702
+                                    ]
+                                ],
+                                "singleParser": null,
+                                "arrayOfImages": null,
+                                "nameParser": "parserImage2ArrayChar",
+                                "countItems": 1,
+                                "predictedValue": null
+                            }
+                        }
+                    ],
+                    "hasValue": false,
+                    "name": "residente_habitual",
+                    "value": null
+                }
+            ],
+            "hasValue": false,
+            "name": "P12",
+            "value": null
+        }
+    ],
+    "hasValue": false,
+    "name": "page1",
+    "value": null
+}
