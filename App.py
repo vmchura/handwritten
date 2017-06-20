@@ -31,21 +31,6 @@ from extraction import PageDetector
 from extraction.FormatModel import UtilDebug
 
 
-# Input  settings ####
-# img = cv2.imread('input/pagina3_1.png', 0) # Doesnt work either
-# img = cv2.imread('input/pagina3_2.jpeg', 0)
-# img = cv2.imread('input/pagina3_3.jpg', 0)
-# img = cv2.imread('input/pagina3_4.png', 0)
-# img = cv2.imread('input/pagina3_5.png', 0)
-# img = cv2.imread('input/pagina3_6.png', 0)
-# img = cv2.imread('input/pagina1_1.png', 0) # para Debugear
-# img = cv2.imread('input/pagina1_2.png', 0) # Otra mas
-# img = cv2.imread('input/pagina1_3.png', 0)
-# img = cv2.imread('input/pagina1_4.png', 0)
-# img = cv2.imread('input/pagina2_1.png', 0)
-# img = cv2.imread('input/pagina2_2.png', 0)
-# img = cv2.imread('input/pagina4_1.png', 0)
-# img = cv2.imread('input/pagina4_2.png', 0)
 
 def processPdf(originalPdf):
     inputPdf = PdfFileReader(open(originalPdf, 'rb'))
@@ -53,23 +38,6 @@ def processPdf(originalPdf):
     pdfname = os.path.basename(originalPdf)
     pdfname = pdfname.split('.')
     pdfname = pdfname[len(pdfname) - 2]
-
-    """
-    if len(originalPdf.split('\\')) == 1:
-        if len(originalPdf.split('/')) == 1:
-            pdfname = originalPdf.split('.')
-            pdfname = pdfname[len(pdfname) - 2]
-        else:
-            pdfname = originalPdf.split('/')
-            pdfname = pdfname[len(pdfname) - 1]
-            pdfname = pdfname.split('.')
-            pdfname = pdfname[len(pdfname) - 2]
-    else:
-        pdfname = originalPdf.split('\\')
-        pdfname = pdfname[len(pdfname) - 1]
-        pdfname = pdfname.split('.')
-        pdfname = pdfname[len(pdfname) - 2]
-    """
 
     if not os.path.exists('input/tmp/'):
         os.makedirs('input/tmp/')
@@ -124,7 +92,7 @@ if __name__ == '__main__':
         .jpg
         .pdf
     """
-    print("Hi there, its mindisApp I'll try to be helpful :) \nBut I'm still just a robot. Sorry!")
+    print("Hi there, its midisApp I'll try to be helpful :) \nBut I'm still just a robot. Sorry!")
 
     arg = sys.argv[1]
     print('arg', arg)

@@ -1214,7 +1214,7 @@ def extractCategory_extractSquareS100(img, TL, BR, cantColumns):
     deltaAmpliacion = 3
     ROI_base = img[TL[1] - deltaAmpliacion:BR[1] + deltaAmpliacion, TL[0] - deltaAmpliacion:BR[0] + deltaAmpliacion]
 
-    top_left_L, bottom_right_L = getBestRectangle(ROI_base, default_th=0.5, low_ratio=0.4, upper_ratio=0.6,
+    top_left_L, bottom_right_L = getBestRectangle(ROI_base, default_th=0.5, low_ratio=0.8, upper_ratio=1.1,
                                                   to_debug=False)
     delta_L = (bottom_right_L[0] - top_left_L[0], bottom_right_L[1] - top_left_L[1])
 
@@ -1252,12 +1252,12 @@ def predictValuesCategory_SquareS100(list_images, labels):
 
     results = []
 
-    if zeros/total_area > 0.2:
+    if zeros/total_area > 0.15:
         results.append(labels[0])
     else:
         results.append('?')
-    #
-    # print('zeros: ',zeros)
+
+    # print('zeros: ',zeros, 'ratio: ',(zeros/total_area))
     # plt.imshow(img)
     # plt.show()
     return results
