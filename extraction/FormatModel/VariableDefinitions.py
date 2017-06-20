@@ -48,9 +48,26 @@ class Category:
 
         if explicit:
             print(('\t' * ident) + '['+self.description+'] hasValue: ' + str(self.hasValue))
+
         print(('\t'*ident) + self.name + ' : ' +(('None' if self.value is None else str(self.value)) if self.hasValue else 'noValue'))
         for subtype in self.subTypes:
             subtype.describe( explicit,ident + 1)
+
+    def describeAsTable(self, ident = None):
+        if ident is None:
+            ident = 0
+
+        name = self.name
+        value = (('No definido' if self.value is None else 'SI tiene valor') if self.hasValue else 'NO tiene valor')
+        tipo = (('No definido' if self.value is None else (self.value.nameParser)) if self.hasValue else 'NO tiene valor')
+        cant = (('No definido' if self.value is None else str((self.value.countItems))) if self.hasValue else 'NO tiene valor')
+        desc = self.description
+
+        rest_ident = 6 - ident
+        print(('\t'*ident) + name + ('\t'*rest_ident)+value +'\t' + tipo + '\t' + cant + '\t' + desc)
+
+        for subtype in self.subTypes:
+            subtype.describeAsTable(ident + 1)
 
     def getAllWithValue(self, baseName = ''):
         withValue = []
