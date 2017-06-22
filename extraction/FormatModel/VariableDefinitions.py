@@ -58,9 +58,9 @@ class Category:
             ident = 0
 
         name = self.name
-        value = (('No definido' if self.value is None else 'SI tiene valor') if self.hasValue else 'NO tiene valor')
-        tipo = (('No definido' if self.value is None else (self.value.nameParser)) if self.hasValue else 'NO tiene valor')
-        cant = (('No definido' if self.value is None else str((self.value.countItems))) if self.hasValue else 'NO tiene valor')
+        value = (('No definido' if self.value is None else 'SI tiene valor') if self.hasValue else '-')
+        tipo = (('No definido' if self.value is None else (self.value.nameParser)) if self.hasValue else '-')
+        cant = (('No definido' if self.value is None else str((self.value.countItems))) if self.hasValue else '-')
         desc = self.description
 
         rest_ident = 6 - ident

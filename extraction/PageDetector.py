@@ -70,10 +70,13 @@ class ShapeDetector:
 
 
 def getSingleSquare(image_original, corner, iterations=1):
-    ret3, th3 = cv2.threshold(image_original, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+
+    ret3, If = cv2.threshold(image_original, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    # If = cv2.adaptiveThreshold(image_original, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 51, 2)
+    # If = cv2.bitwise_not(If)
 
     se = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
-    thIMor = cv2.morphologyEx(th3, cv2.MORPH_CLOSE, se)
+    thIMor = cv2.morphologyEx(If, cv2.MORPH_CLOSE, se)
     maxShape = max(image_original.shape)
 
     k_left = int(25)  # componentes >= 4
@@ -127,6 +130,14 @@ def getSingleSquare(image_original, corner, iterations=1):
 
 
     if len(squares_found) != 1:
+        print('len(squares_found) != 1')
+        # plt.subplot(4,1, 1), plt.imshow(backtorgb, 'gray'), plt.title('backtorgb')
+        # plt.subplot(4,1, 2), plt.imshow(image_original, 'gray'), plt.title('image_original')
+        # plt.subplot(4,1, 3), plt.imshow(thIMor, 'gray'), plt.title('thIMor')
+        # plt.subplot(4,1, 4), plt.imshow(If, 'gray'), plt.title('If')
+		#
+		#
+        # plt.show()
         return None
     c = squares_found[0]
     peri = cv2.arcLength(c, True)
@@ -146,9 +157,11 @@ def getSingleSquare(image_original, corner, iterations=1):
     corners.append([Top, Left + W])
     corners.append([Top + H, Left])
     corners.append([Top, Left])
-    print('corners: ',corners)
-    # plt.subplot(2, 1, 1), plt.imshow(backtorgb,'gray'), plt.title('backtorgb')
-    # plt.subplot(2, 1, 2), plt.imshow(image_original, 'gray'), plt.title('image_original')
+    # print('corners: ',corners)
+    # plt.subplot(4, 1, 1), plt.imshow(backtorgb,'gray'), plt.title('backtorgb')
+    # plt.subplot(4, 1, 2), plt.imshow(image_original, 'gray'), plt.title('image_original')
+    # plt.subplot(4, 1, 3), plt.imshow(thIMor, 'gray'), plt.title('thIMor')
+    # plt.subplot(4, 1, 4), plt.imshow(If, 'gray'), plt.title('If')
     # plt.show()
 
     # if iterations <= 1:
@@ -345,7 +358,7 @@ def enderezarImagen(image):
     M[0, 2] += tx  # third column of matrix holds translation, which takes effect after rotation.
     M[1, 2] += ty
 
-    rotatedImg = cv2.warpAffine(image, M, dsize=(int(newX), int(newY)))
+    rotatedImg = cv2.warpAffine(image, M, dsize=(int(newX), int(newY)), borderValue=255)
     return rotatedImg
 
 
