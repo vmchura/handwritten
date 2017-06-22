@@ -71,9 +71,9 @@ class ShapeDetector:
 
 def getSingleSquare(image_original, corner, iterations=1):
 
-    ret3, If = cv2.threshold(image_original, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-    # If = cv2.adaptiveThreshold(image_original, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 51, 2)
-    # If = cv2.bitwise_not(If)
+    # ret3, If = cv2.threshold(image_original, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    If = cv2.adaptiveThreshold(image_original, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 51, 2)
+    If = cv2.bitwise_not(If)
 
     se = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
     thIMor = cv2.morphologyEx(If, cv2.MORPH_CLOSE, se)
